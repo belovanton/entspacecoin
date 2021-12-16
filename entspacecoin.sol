@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Current Version of solidity
 pragma solidity ^0.8.4;
 
@@ -14,7 +15,7 @@ contract Token {
     string public name = "Entspacecoin";
 
     // Tokens Symbol
-    string public symbol = “ESC”;
+    string public symbol = "ESC";
 
     // Total Decimals (max 18)
     uint public decimals = 18;
@@ -35,7 +36,7 @@ contract Token {
 
     // Transfering coins function
     function transfer(address to, uint value) public returns(bool) {
-        require(balanceOf(msg.sender) >= value, ‘Insufficient balance’);
+        require(balanceOf(msg.sender) >= value, 'Insufficient balance');
         balances[to] += value;
         balances[msg.sender] -= value;
         emit Transfer(msg.sender, to, value);
